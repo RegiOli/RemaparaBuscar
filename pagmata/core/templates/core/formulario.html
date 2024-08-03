@@ -1,0 +1,240 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+     <link rel="icon" href="{% static 'core/img/rema.ico' %}">
+   
+   
+   
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}"> 
+   
+
+
+</head>
+
+<body>
+
+
+
+    <header class="text-center my-4">
+        <h1>Rema para buscar</h1>
+    </header>
+
+    <section class="button-container mt-5">
+        <h3 class="text-center">Etapas de la Búsqueda</h3>
+        <div class="row">
+
+            <div class="col-12 col-md-4 mb-4">
+                <a href="{% url 'juego' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+                    <img src="{% static 'core/img/game.png' %}" alt="Logo de juego" width="50" class="mr-2">
+                    Juego
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4">
+                <a href="{% url 'turismo' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+                    <img src="{% static 'core/img/ubication.png' %}" alt="Logo de Turismo" width="50" class="mr-2">
+                    Turismo
+                </a>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <a href="{% url 'destinofinal' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+                    <img src="{% static 'core/img/cuestionari.png' %}" alt="Logo de Cuestionario" width="50" class="mr-2">
+                    Destino Final
+                </a>
+            </div>
+
+            <div class="col-12 col-md mb-4">
+                <a href="{% url 'index' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+                    <img src="{% static 'core/img/inicio.png' %}" alt="Logo de juego" width="50" class="mr-2">
+                    Inicio
+                </a>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+    </section>
+
+    <h4>En esta página deberá completar los campos indicados teniendo en cuenta lo recorrido en <i>Turismo</i></h4>
+
+
+    <h2>Formulario</h2>
+
+
+
+    <main class="container">
+        <div class="text-center custom-bg-gray p-4 rounded">
+            <p class="text-justify"> Complete en la columna <i>Lugar</i> una de las paradas del núcleo turístico señalado que considere que están ahí por ser relevantes en <strong>Rema</strong> por algún motivo y en los cuales fue recibiendo pistas en formato papel. ✉️ </p>
+            <p class="text-justify"> Lo ayudo un poco porque lo veo meido perdido. En la primera casilla tiene que escribir "Monroe" 😉. En el resto de los campos no tiene que escribir la dirección, sino el nombre del lugar. 
+            </p>
+            <p class="text-justify"> Cada lugar debe anotarlo con mayúscula al inicio y uno de ellos es una sigla, la cual va toda en mayúscula  🤭           </p>
+
+            <p class="text-justify"> Luego, seleccione el motivo por el que es importante en <strong>Rema</strong> de la lista desplegable
+            </p>    
+                
+            <p class="text-justify"> Por último, ordene los acontecimiento en base a como fueron ocurriendo cronológicamente. </p>    
+            
+            <p class="text-justify">Si todos los campos fueron completados de manera correcta, obtendrá un <strong>Código</strong> que lo ayudará a dirigirse al <i>Destino Final</i>
+            </p>
+
+            <a href="https://youtu.be/ScjT8zvT7d0" target="_blank" title="Sorpresa 4 =)"> Cuarto, otra canción</a>
+
+        </div>
+
+    </main>
+
+<br>
+
+
+
+      
+
+    <div class="container">
+         <form method="post" action="{% url 'formulario' %}">
+         {% csrf_token %}
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th style="text-align: center">Núcleo</th>
+                        <th style="text-align: center">Lugar</th>
+                        <th style="text-align: center">Motivo</th>
+                        <th style="text-align: center">Orden</th>
+                    </tr>
+
+                    <tr>
+                        <td><label for="paradadelnucleo1">Parada del Núcleo 1</label></td>
+                        <td><input type="text" name="lugar1" id="paradadelnucleo1" class="form-control" required></td>
+                        <td>
+                            <select name="motivo1" class="form-control" required>
+                                <option value="Abrazo">Abrazo</option>
+                                <option value="Beso">Beso</option>
+                                <option value="Salidas">Salidas</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Juegos">Juegos</option>
+                                <option value="Nos conocimos">Nos conocimos</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="orden1" class="form-control" max="6" min="1" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="paradadelnucleo2">Parada del Núcleo 2</label></td>
+                        <td><input type="text" name="lugar2" id="paradadelnucleo2" class="form-control" required></td>
+                        <td>
+                            <select name="motivo2" class="form-control" required>
+                                <option value="Abrazo">Abrazo</option>
+                                <option value="Beso">Beso</option>
+                                <option value="Salidas">Salidas</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Juegos">Juegos</option>
+                                <option value="Nos conocimos">Nos conocimos</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="orden2" class="form-control" max="6" min="1" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="paradadelnucleo3">Parada del Núcleo 3</label></td>
+                        <td><input type="text" name="lugar3" id="paradadelnucleo3" class="form-control" required></td>
+                        <td>
+                            <select name="motivo3" class="form-control" required>
+                                <option value="Abrazo">Abrazo</option>
+                                <option value="Beso">Beso</option>
+                                <option value="Salidas">Salidas</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Juegos">Juegos</option>
+                                <option value="Nos conocimos">Nos conocimos</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="orden3" class="form-control" max="6" min="1" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="paradadelnucleo4">Parada del Núcleo 4</label></td>
+                        <td><input type="text" name="lugar4" id="paradadelnucleo4" class="form-control" required></td>
+                        <td>
+                            <select name="motivo4" class="form-control" required>
+                                <option value="Abrazo">Abrazo</option>
+                                <option value="Beso">Beso</option>
+                                <option value="Salidas">Salidas</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Juegos">Juegos</option>
+                                <option value="Nos conocimos">Nos conocimos</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="orden4" class="form-control" max="6" min="1" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="paradadelnucleo5">Parada del Núcleo 5</label></td>
+                        <td><input type="text" name="lugar5" id="paradadelnucleo5" class="form-control" required></td>
+                        <td>
+                            <select name="motivo5" class="form-control" required>
+                                <option value="Abrazo">Abrazo</option>
+                                <option value="Beso">Beso</option>
+                                <option value="Salidas">Salidas</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Juegos">Juegos</option>
+                                <option value="Nos conocimos">Nos conocimos</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="orden5" class="form-control" max="6" min="1" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="paradadelnucleo6">Parada del Núcleo 6</label></td>
+                        <td><input type="text" name="lugar6" id="paradadelnucleo6" class="form-control" required></td>
+                        <td>
+                            <select name="motivo6" class="form-control" required>
+                                <option value="Abrazo">Abrazo</option>
+                                <option value="Beso">Beso</option>
+                                <option value="Salidas">Salidas</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Juegos">Juegos</option>
+                                <option value="Nos conocimos">Nos conocimos</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="orden6" class="form-control" max="6" min="1" required></td>
+                    </tr>
+
+
+
+            </table>
+            <br>
+            <div class="d-flex justify-content-center mb-3">
+                <input type="submit" value="Enviar" class="btn btn-success mr-2">
+                <input type="reset" value="Borrar" class="btn btn-danger">
+            </div>
+            
+        </form>
+
+
+ {% if status == 'success' %}
+    <div class="alert alert-success" style="text-align: center;">¡Formulario completado correctamente! El código que deberá ingresar en <i>Destino Final</i> junto con el número que obtenga en <i>Juego</i> es: <strong> 10 </strong> </div>
+    {% elif status == 'error' %}
+    <div class="alert alert-danger" style="text-align: center;">Error: Alguna respuesta es incorrecta. Por favor, intente de nuevo.</div>
+    {% endif %} 
+
+
+
+    </div>
+
+        <footer>
+            <div class="fraseformulario">Siempre llegamos al lugar donde nos esperan</div>
+        </footer>
+
+
+
+</body>
+
+
+
+</html>

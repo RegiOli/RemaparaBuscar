@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rema para buscar</title>
+ <link rel="icon" href="{% static 'core/img/rema.ico' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}"> 
+</head>
+
+<body>
+    <header class="text-center my-4">
+        <h1>Rema para buscar</h1>
+    </header>
+    
+    <main class="container">
+        <div class="text-center custom-bg-gray p-4 rounded">
+            <h2>¡Bienvenido a la Búsqueda del tesoro!</h2>
+            <br>
+            <p class="text-justify">Si recibió este link es porque Ud. es una persona <b>muy especial</b> ❤️🔌 y está a punto de
+                participar de un juego de turismo, <i>trekking</i> e ingenio. </p>
+            <p>Haciendo click en los diferentes links recibirá las instrucciones de cada etapa del juego.</p>
+            <h4>¿Empezamos?</h4>
+            <a href="https://youtu.be/NZGHXy1IAHM?si=77f1cELNDhedN6a2" target="_blank" title="Sorpresa 2 =)"> Segundo, otra canción</a>
+        </div>
+
+        <section class="mt-5">
+            <h3>Etapas de la Búsqueda</h3>
+            <br>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                  <a href="{% url 'turismo' %}" class="btn btn-outline-primary btn-block  align-items-center justify-content-center">
+                        <img src="{% static 'core/img/ubication.png' %}" alt="Logo de Turismo" width="50" class="mr-2">
+                        Turismo
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a href="{% url 'formulario' %}" class="btn btn-outline-primary btn-block  align-items-center justify-content-center">
+                        <img src="{% static 'core/img/formpng.png' %}" alt="Logo de Formulario" width="50" class="mr-2">
+                        Formulario
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a href="{% url 'juego' %}" class="btn btn-outline-primary btn-block  align-items-center justify-content-center">
+                        <img src="{% static 'core/img/game.png' %}" alt="Logo de juego" title="http//www.flaticon.es/iconos-gratis/palanca-de-mando" width="50" class="mr-2">
+                        Juego
+                    </a>
+                </div>
+
+
+
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a href="{% url 'destinofinal' %}" class="btn btn-outline-primary btn-block align-items-center justify-content-center">
+                        <img src="{% static 'core/img/cuestionari.png' %}" alt="Logo de Cuestionario" width="50" class="mr-2">
+                        Destino Final
+                    </a>
+                </div>
+
+                
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer>
+        <div class="fraseformulario">La vida se encoje o se se expande en proporción a tu coraje (Anais Nin)</div>
+    </footer>
+
+
+
+</body>
+
+</html>

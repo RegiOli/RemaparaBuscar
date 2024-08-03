@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pista 3</title>
+     <link rel="icon" href="{% static 'core/img/rema.ico' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}"> 
+</head>
+
+<body>
+    <header class="text-center my-4">
+        <h1>Pista 3</h1>
+    </header>
+
+    <main class="container">
+        <h4 class="text-center">En este lugar, al decir tu nombre te darán un papel.</h4>
+
+        <p class="text-center">Consultar al ingreso.</p>
+
+        <div class="text-center my-4">
+            <img src="{% static 'core/img/pista3.jpg' %}" alt="Foto de una pista" class="responsive-img" style="border: 2px solid black;">
+        </div>
+
+        <section class="mt-5">
+            <h3 class="text-center">Etapas de la Búsqueda</h3>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a href="{% url 'turismo' %}" class="btn btn-outline-primary d-block w-100 text-center">
+                        <img src="{% static 'core/img/ubication.png' %}" alt="Logo de Turismo" width="50" class="mr-2">
+                        Turismo
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a href="{% url 'formulario' %}" class="btn btn-outline-primary d-block w-100 text-center">
+                        <img src="{% static 'core/img/formpng.png' %}" alt="Logo de Formulario" width="50" class="mr-2">
+                        Formulario
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a href="{% url 'destinofinal' %}" class="btn btn-outline-primary d-block w-100 text-center">
+                        <img src="{% static 'core/img/cuestionari.png' %}" alt="Logo de Cuestionario" width="50" class="mr-2">
+                        Destino Final
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <a href="{% url 'juego' %}" class="btn btn-outline-primary d-block w-100 text-center" title="Juego">
+                        <img src="{% static 'core/img/game.png' %}" alt="Logo de juego" width="50" class="mr-2">
+                        Juego
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

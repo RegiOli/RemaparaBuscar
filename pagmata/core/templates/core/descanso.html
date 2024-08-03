@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descanso</title>
+    <link rel="icon" href="{% static 'core/img/rema.ico' %}">
+    
+<link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item {
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+
+        a {
+    text-decoration: none;
+    /* Elimina el subrayado */
+    transition: all 0.3s ease;
+    /* Añade una transición suave */
+}
+
+a:hover {
+    color: #6d33ff;
+    /* Cambia el color al pasar el mouse */
+    font-size: 1.2em;
+    /* Agranda la letra al pasar el mouse */
+    text-decoration: none;
+    /* Asegura que no haya subrayado */
+    font-weight: bold;
+}
+
+
+
+
+h1 {
+    background: rgba(132, 220, 255, 0.737);
+    color: rgba(0, 119, 255, 0.963);
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+    </style>
+    
+
+</head>
+
+
+<body>
+
+    <header class="text-center my-4">
+        <h1>Rema para buscar</h1>
+    </header>
+
+
+    <h2 style="text-align: center;"> ❤️ ¿Cuántas hay? ❤️</h2>
+    <br>
+
+    <h3 style="text-align: center;"> Esto no es parte del juego porque las podés contar, no es taaan fácil el juego </h3>
+
+    <br>
+
+    <div class="col-12 col-md d-flex justify-content-center">
+        <a href="{% url 'turismo' %}" class="btn btn-outline-primary d-flex align-items-center justify-content-center" style="width: auto; padding: 10px 20px;">
+            <img src="{% static 'core/img/ubication.png' %}" alt="Logo de Turismo" width="30" class="mr-2">
+            Turismo
+        </a>
+    </div>
+<br>
+
+
+     <a href="{% static 'pdfs/descanso.pdf' %}" target="_blank" style="display: block; text-align: center; margin: 0 auto;">Abrir PDF en una nueva pestaña</a>                  
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+
+</html>

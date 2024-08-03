@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destino Final</title>
+  
+  <link rel="icon" href="{% static 'core/img/rema.ico' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}"> 
+ 
+</head>
+
+<body>
+
+
+
+  <header class="text-center my-4">
+    <h1>Rema para buscar</h1>
+  </header>
+
+  <section class="button-container mt-5">
+    <h3 class="text-center">Etapas de la Búsqueda</h3>
+    <div class="row">
+
+      <div class="col-12 col-md-4 mb-4">
+        <a href="{% url 'formulario' %}"
+          class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+          <img src="{% static 'core/img/formpng.png' %}" alt="Logo de juego" width="50" class="mr-2">
+          Formulario  
+        </a>
+      </div>
+
+
+
+      <div class="col-12 col-md-4 mb-4">
+        <a href="{% url 'turismo' %}"
+          class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+          <img src="{% static 'core/img/ubication.png' %}" alt="Logo de Turismo" width="50" class="mr-2">
+          Turismo
+        </a>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <a href="{% url 'juego' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+          <img src="{% static 'core/img/game.png' %}" alt="Logo de Cuestionario" width="50" class="mr-2">
+          Juego
+        </a>
+      </div>
+
+      <div class="col-12 col-md mb-4">
+        <a href="{% url 'index' %}"
+          class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+          <img src="{% static 'core/img/inicio.png' %}" alt="Logo de juego" width="50" class="mr-2">
+          Inicio
+        </a>
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+  </section>
+
+
+
+  <h2>Destino Final</h2>
+
+
+  <h4> Con las <i>Pistas</i> que fue recolectando, deberá completar la siguiente frase (la primera letra en mayúscula): </h4>
+
+  
+
+
+
+    <form method="post" action="{% url 'destinofinal' %}">
+        {% csrf_token %}
+    <main class="container">
+      <div class="text-center custom-bg-gray p-4 rounded">
+        <label for="teatro">El destino final está muy cerca del Teatro </label>
+        <input type="text" name="teatro" id="teatro" required class="Completar">
+        <label for="avenida"> a 20 minutos caminando desde donde ahora se encuentra y queda en la Av. </label>
+        <input type="text" name="avenida" id="avenida" required class="Completar">
+        <label for="numero">al </label>
+        <input type="number" name="numero" id="numero" max="1070" required class="Completar">.
+        <br>
+        <br>
+        <input type="submit" value="Enviar" class="btn btn-success mr-2">
+        <input type="reset" value="Borrar" class="btn btn-danger">
+        <br>
+  </form>
+<br>
+{% if status == 'success' %}
+    <div class="alert alert-success">¡Formulario completado correctamente! En este lugar, debe decir su nombre y lo irán guiando.</div>
+    {% elif status == 'error' %}
+    <div class="alert alert-danger">"La peteaste, volvé a empezar desde Monroe jajaajaj mentira! volvé a cargar la página de Destino Final"</div>
+    {% endif %} 
+
+
+
+  </div>
+
+  </main>
+
+
+
+
+  <!-- <br>
+  <p style="text-align: center;">En este lugar, debe decir su nombre y lo irán guiando.</p> -->
+
+  </main>
+
+
+  </div>
+
+
+
+
+
+  <footer> Estar en compañía no es estar con alguien, sino estar en alguien (Antonio Porchia) </footer>
+</body>
+
+</html>

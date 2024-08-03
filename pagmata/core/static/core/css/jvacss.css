@@ -1,0 +1,286 @@
+html,
+body {
+    height: 100%;
+    margin: 1px;
+}
+
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 25vh;
+    /* Altura mínima de la ventana de visualización */
+}
+
+
+
+
+main {
+    flex: 1;
+    /* Ocupa el espacio restante */
+}
+
+
+
+h1 {
+    background: rgba(132, 220, 255, 0.737);
+    color: rgba(0, 119, 255, 0.963);
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: rgb(226, 110, 43);
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    margin: 0, 20px;
+
+}
+
+
+
+h3,
+h4 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h3 {
+
+    font-size: x-large;
+    color: rgb(226, 43, 195);
+}
+
+
+h4 {
+
+    font-size: large;
+    color: rgb(147, 43, 226);
+
+}
+
+
+
+span {
+    font-weight: bold;
+    color: blueviolet;
+    margin-left: 5px;
+}
+
+.Gracias {
+    font-weight: bold;
+    color: green;
+    background: greenyellow;
+    text-align: center;
+    padding: 10px;
+
+}
+
+
+
+
+
+
+
+
+a {
+    text-decoration: none;
+    /* Elimina el subrayado */
+    transition: all 0.3s ease;
+    /* Añade una transición suave */
+}
+
+a:hover {
+    color: #6d33ff;
+    /* Cambia el color al pasar el mouse */
+    font-size: 1.2em;
+    /* Agranda la letra al pasar el mouse */
+    text-decoration: none;
+    /* Asegura que no haya subrayado */
+    font-weight: bold;
+}
+
+
+
+footer {
+    margin-top: 25px;
+    width: 100%;
+    background-color: rgba(255, 165, 243, 0.518);
+    color: rgb(135, 15, 135);
+    font-style: italic;
+    padding: 2%;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+
+.button-container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 2px;
+    text-align: center;
+}
+
+.card {
+    background-color: #f8f9fa;
+    /* Fondo claro */
+    border: 2px solid #dee2e6;
+    /* Borde ligero */
+    border-radius: 5px;
+    width: 80%;
+    /* 4 elementos por fila */
+    box-sizing: border-box;
+    margin-left: 25px;
+    transition: background-color 0.3s;
+    padding: 10px;
+    /* Espacio interno */
+}
+
+.card.destino-final {
+    width: 80%;
+    /* Ocupa el 80% del ancho en pantallas grandes */
+    max-width: 800px;
+    /* Ancho máximo para pantallas grandes */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-content a {
+    color: #040404;
+    text-decoration: none;
+    display: block;
+    /* Asegura que el área del enlace cubra el bloque */
+    padding: 10px;
+    /* Espacio alrededor del texto */
+    text-align: center;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+    /* Transición suave */
+    flex: 1;
+    /* Hace que los enlaces ocupen el espacio disponible */
+}
+
+.card-content a.nucleo:hover {
+    background-color: #d1f1e9;
+    /* Fondo en hover para Núcleo */
+    color: #0c5460;
+    /* Color del texto en hover para Núcleo */
+}
+
+.card-content a.pista:hover {
+    background-color: #f8d7da;
+    /* Fondo en hover para Pista */
+    color: #721c24;
+    /* Color del texto en hover para Pista */
+}
+
+.card-content a.nucleo {
+    border-bottom: 2px dotted #ccc;
+    /* Línea divisoria punteada */
+}
+
+.card-content a.pista {
+    border-top: 1px dotted #ccc;
+    /* Línea divisoria punteada */
+}
+
+
+.card-content a.descanso:hover {
+    background-color: rgba(71, 164, 230, 0.15);
+    /* Fondo en hover para descanso */
+    color: rgb(71, 145, 230);
+    /* Color del texto en hover para descanso */
+}
+
+.card-content a.destino:hover {
+    background-color: #fff7a3;
+    /* Fondo en hover para destino */
+    color: #72671c;
+    /* Color del texto en hover para destino */
+}
+
+
+.custom-bg-gray {
+    background-color: #e2e5eafd;
+    /* Un gris más oscuro que 'bg-light' */
+    background-color: #f8f9fa;
+    /* Fondo claro */
+    border: 2px solid #dee2e6;
+    /* Borde ligero */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: auto;
+
+}
+
+
+ /* Estilo para el video */
+ .responsive-video {
+    margin: 2%;
+    width: 80%; /* Tamaño por defecto para computadoras */
+    height: auto;
+}
+
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+@media (max-width: 576px) {
+    .card .custom-bg-gray .container {
+        width: 80%;
+        /* Una cajita por fila en móviles */
+    }
+}
+
+.header .nav {
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .nav-link {
+    margin: 5px 0;
+}
+
+.footer {
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+      
+
+    /* Estilo para pantallas pequeñas (móviles) */
+    @media (max-width: 768px) {
+        .responsive-video {
+            width: 100%; /* Ajusta el ancho al 100% en móviles */
+        }
+    }
