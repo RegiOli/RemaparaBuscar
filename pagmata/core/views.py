@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.contrib import admin
+from django.shortcuts import render
 from .forms import RespuestaFormularioForm, RespuestaDestinoFinalForm
 
 def home(request):
@@ -10,63 +11,66 @@ def index(request):
 def turismo(request):
     return render(request, "core/turismo.html")
 
+
+
+
+
 def formulario(request):
-    status = ''
-    form = RespuestaFormularioForm(request.POST or None)
-
+    status = None
     if request.method == 'POST':
+        form = RespuestaFormularioForm(request.POST)
         if form.is_valid():
-            respuestas_usuario = form.cleaned_data
-
-            # Respuestas correctas para Formulario
-            lugares_correctos = ["Monroe", "Parque Centenario", "Planetario", "Abasto", "Billares 36", "CNBA"]
+            respuesta = form.cleaned_data
+            
+            lugares_correctos = ["Monroe", "Parque Centenario", "Planetario", "Abasto", "36 Billares", "CNBA"]
             motivos_correctos = ["Abrazo", "Beso", "Salidas", "Películas", "Juegos", "Nos conocimos"]
             orden_correcto = [5, 6, 3, 4, 2, 1]
 
-            if ([
-                respuestas_usuario['lugar1'], respuestas_usuario['lugar2'], respuestas_usuario['lugar3'],
-                respuestas_usuario['lugar4'], respuestas_usuario['lugar5'], respuestas_usuario['lugar6']
-            ] == lugares_correctos and
-                [
-                    respuestas_usuario['motivo1'], respuestas_usuario['motivo2'], respuestas_usuario['motivo3'],
-                    respuestas_usuario['motivo4'], respuestas_usuario['motivo5'], respuestas_usuario['motivo6']
-                ] == motivos_correctos and
-                [
-                    respuestas_usuario['orden1'], respuestas_usuario['orden2'], respuestas_usuario['orden3'],
-                    respuestas_usuario['orden4'], respuestas_usuario['orden5'], respuestas_usuario['orden6']
-                ] == orden_correcto):
-
-                # Guardar las respuestas en la base de datos
-                form.save()
-
+            # Verifica las respuestas
+            correctas = True
+            for i in range(1, 7):
+                if (respuesta[f'lugar{i}'] != lugares_correctos[i-1] or
+                    respuesta[f'motivo{i}'] != motivos_correctos[i-1] or
+                    respuesta[f'orden{i}'] != orden_correcto[i-1]):
+                    correctas = False
+                    break
+            
+            if correctas:
                 status = 'success'
+                form.save()  # Guarda la respuesta en la base de datos
             else:
                 status = 'error'
-
+                form.save() 
+    else:
+        form = RespuestaFormularioForm()
+    
     return render(request, 'core/formulario.html', {'form': form, 'status': status})
 
+
+
+
 def destino_final(request):
-    status = ''
-    form = RespuestaDestinoFinalForm(request.POST or None)
-
+    status = None
     if request.method == 'POST':
+        form = RespuestaDestinoFinalForm(request.POST)
         if form.is_valid():
-            respuestas_destino = form.cleaned_data
-
+            respuesta = form.cleaned_data
+            
             respuestas_correctas = {'teatro': 'Regina', 'avenida': 'Libertad', 'numero': '1070'}
-
-            if (respuestas_destino['teatro'] == respuestas_correctas['teatro'] and
-                respuestas_destino['avenida'] == respuestas_correctas['avenida'] and
-                respuestas_destino['numero'] == respuestas_correctas['numero']):
-
-                # Guardar las respuestas en la base de datos
-                form.save()
-
+            
+            if (respuesta['teatro'] == respuestas_correctas['teatro'] and
+                respuesta['avenida'] == respuestas_correctas['avenida'] and
+                respuesta['numero'] == respuestas_correctas['numero']):
                 status = 'success'
+                form.save()  # Guarda la respuesta en la base de datos
             else:
                 status = 'error'
-
+                form.save() 
+    else:
+        form = RespuestaDestinoFinalForm()
+    
     return render(request, 'core/destinofinal.html', {'form': form, 'status': status})
+
 
 def juego(request):
     return render(request, "core/juego.html")
@@ -91,3 +95,4 @@ def pista6(request):
 
 def descanso(request):
     return render(request, "core/descanso.html")
+
