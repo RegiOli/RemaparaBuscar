@@ -1,3 +1,4 @@
+
 from django.db import models
 
 class RespuestaFormulario(models.Model):
@@ -24,3 +25,13 @@ class RespuestaDestinoFinal(models.Model):
     teatro = models.CharField(max_length=100)
     avenida = models.CharField(max_length=100)
     numero = models.CharField(max_length=100)
+
+class Respuesta(models.Model):
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
+    jugar = models.CharField(max_length=10)
+    caminar = models.CharField(max_length=10)
+    num1 = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
