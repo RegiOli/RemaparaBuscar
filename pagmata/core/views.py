@@ -1,6 +1,9 @@
-from django.contrib import admin
 from django.shortcuts import render
 from .forms import RespuestaFormularioForm, RespuestaDestinoFinalForm
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+from .models import Respuesta
 
 def home(request):
     return render(request, "core/home.html")
@@ -13,6 +16,20 @@ def turismo(request):
 
 
 
+@csrf_exempt
+def guardar_respuestas(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        Respuesta.objects.create(
+            nombre=data['nombre'],
+            apellido=data['apellido'],
+            jugar=data['jugar'],
+            caminar=data['caminar'],
+            num1=data['num1']
+        )
+        return JsonResponse({'status': 'success'})
+    return JsonResponse({'status': 'fail'})
+
 
 
 def formulario(request):
@@ -22,7 +39,7 @@ def formulario(request):
         if form.is_valid():
             respuesta = form.cleaned_data
             
-            lugares_correctos = ["Monroe", "Parque Centenario", "Planetario", "Abasto", "36 Billares", "CNBA"]
+            lugares_correctos = ["Pacheco", "Parque Centenario", "Planetario", "Abasto", "36 Billares", "CNBA"]
             motivos_correctos = ["Abrazo", "Beso", "Salidas", "Películas", "Juegos", "Nos conocimos"]
             orden_correcto = [5, 6, 3, 4, 2, 1]
 
@@ -71,7 +88,6 @@ def destino_final(request):
     
     return render(request, 'core/destinofinal.html', {'form': form, 'status': status})
 
-
 def juego(request):
     return render(request, "core/juego.html")
 
@@ -95,4 +111,11 @@ def pista6(request):
 
 def descanso(request):
     return render(request, "core/descanso.html")
+
+
+
+
+
+
+
 
