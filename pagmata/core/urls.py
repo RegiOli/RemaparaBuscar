@@ -20,6 +20,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views
+from .views import guardar_respuestas
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,5 +40,6 @@ urlpatterns = [
     path('pista5/', views.pista5, name="pista5"),
     path('pista6/', views.pista6, name="pista6"),
     path('descanso/', views.descanso, name="descanso"),
+    path('guardar_respuestas/', guardar_respuestas, name='guardar_respuestas'),
+    ]
 
-]
