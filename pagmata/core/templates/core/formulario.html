@@ -8,12 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
      <link rel="icon" href="{% static 'core/img/rema.ico' %}">
+    
    
-   
-   
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-     <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}"> 
-   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}">
 
 
 </head>
@@ -77,18 +75,16 @@
 
     <main class="container">
         <div class="text-center custom-bg-gray p-4 rounded">
-            <p class="text-justify"> Complete en la columna <i>Lugar</i> una de las paradas del núcleo turístico señalado que considere que están ahí por ser relevantes en <strong>Rema</strong> por algún motivo y en los cuales fue recibiendo pistas en formato papel. ✉️ </p>
-            <p class="text-justify"> Lo ayudo un poco porque lo veo meido perdido. En la primera casilla tiene que escribir "Monroe" 😉. En el resto de los campos no tiene que escribir la dirección, sino el nombre del lugar. 
+            <p class="text-justify"> Complete en la columna <i>Lugar</i> una de las paradas del núcleo turístico señalado que considere que están ahí por ser relevantes en <strong>Rema</strong> por algún motivo. En etos lugares fue recibiendo pistas en formato papel ✉️ o vía msj vitual 📱.</p>
+            <p class="text-justify"> Lo ayudo un poco porque lo veo meido perdido. En la primera casilla tiene que escribir "Pacheco" 😉 (aunque la parada del Núcleo 1 sea Monroe). En el resto de los campos no tiene que escribir la dirección, sino el nombre del lugar. 
             </p>
-            <p class="text-justify"> Cada lugar debe anotarlo con mayúscula al inicio y uno de ellos es una sigla, la cual va toda en mayúscula  🤭           </p>
+            <p class="text-justify"> Cada lugar debe anotarlo con mayúscula al inicio y uno de ellos es una sigla, la cual va toda en mayúscula 🤭 .  </p>
 
-            <p class="text-justify"> Luego, seleccione el motivo por el que es importante en <strong>Rema</strong> de la lista desplegable
-            </p>    
+            <p class="text-justify"> Luego, seleccione el motivo por el que es importante en <strong>Rema</strong> de la lista desplegable ❤️ .</p>    
                 
             <p class="text-justify"> Por último, ordene los acontecimiento en base a como fueron ocurriendo cronológicamente. </p>    
             
-            <p class="text-justify">Si todos los campos fueron completados de manera correcta, obtendrá un <strong>Código</strong> que lo ayudará a dirigirse al <i>Destino Final</i>
-            </p>
+            <p class="text-justify">Si todos los campos fueron completados de manera correcta, obtendrá un <strong>Código</strong> que lo ayudará a dirigirse al <i>Destino Final</i> 🍬 . </p>
 
             <a href="https://youtu.be/ScjT8zvT7d0" target="_blank" title="Sorpresa 4 =)"> Cuarto, otra canción</a>
 
@@ -105,6 +101,9 @@
     <div class="container">
          <form method="post" action="{% url 'formulario' %}">
          {% csrf_token %}
+
+
+         
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
@@ -121,10 +120,10 @@
                             <select name="motivo1" class="form-control" required>
                                 <option value="Abrazo">Abrazo</option>
                                 <option value="Beso">Beso</option>
-                                <option value="Salidas">Salidas</option>
-                                <option value="Películas">Películas</option>
                                 <option value="Juegos">Juegos</option>
                                 <option value="Nos conocimos">Nos conocimos</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Salidas">Salidas</option>
                             </select>
                         </td>
                         <td><input type="number" name="orden1" class="form-control" max="6" min="1" required></td>
@@ -136,10 +135,10 @@
                             <select name="motivo2" class="form-control" required>
                                 <option value="Abrazo">Abrazo</option>
                                 <option value="Beso">Beso</option>
-                                <option value="Salidas">Salidas</option>
-                                <option value="Películas">Películas</option>
                                 <option value="Juegos">Juegos</option>
                                 <option value="Nos conocimos">Nos conocimos</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Salidas">Salidas</option>
                             </select>
                         </td>
                         <td><input type="number" name="orden2" class="form-control" max="6" min="1" required></td>
@@ -151,10 +150,10 @@
                             <select name="motivo3" class="form-control" required>
                                 <option value="Abrazo">Abrazo</option>
                                 <option value="Beso">Beso</option>
-                                <option value="Salidas">Salidas</option>
-                                <option value="Películas">Películas</option>
                                 <option value="Juegos">Juegos</option>
                                 <option value="Nos conocimos">Nos conocimos</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Salidas">Salidas</option>
                             </select>
                         </td>
                         <td><input type="number" name="orden3" class="form-control" max="6" min="1" required></td>
@@ -166,10 +165,10 @@
                             <select name="motivo4" class="form-control" required>
                                 <option value="Abrazo">Abrazo</option>
                                 <option value="Beso">Beso</option>
-                                <option value="Salidas">Salidas</option>
-                                <option value="Películas">Películas</option>
                                 <option value="Juegos">Juegos</option>
                                 <option value="Nos conocimos">Nos conocimos</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Salidas">Salidas</option>
                             </select>
                         </td>
                         <td><input type="number" name="orden4" class="form-control" max="6" min="1" required></td>
@@ -181,10 +180,10 @@
                             <select name="motivo5" class="form-control" required>
                                 <option value="Abrazo">Abrazo</option>
                                 <option value="Beso">Beso</option>
-                                <option value="Salidas">Salidas</option>
-                                <option value="Películas">Películas</option>
                                 <option value="Juegos">Juegos</option>
                                 <option value="Nos conocimos">Nos conocimos</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Salidas">Salidas</option>
                             </select>
                         </td>
                         <td><input type="number" name="orden5" class="form-control" max="6" min="1" required></td>
@@ -196,10 +195,10 @@
                             <select name="motivo6" class="form-control" required>
                                 <option value="Abrazo">Abrazo</option>
                                 <option value="Beso">Beso</option>
-                                <option value="Salidas">Salidas</option>
-                                <option value="Películas">Películas</option>
                                 <option value="Juegos">Juegos</option>
                                 <option value="Nos conocimos">Nos conocimos</option>
+                                <option value="Películas">Películas</option>
+                                <option value="Salidas">Salidas</option>
                             </select>
                         </td>
                         <td><input type="number" name="orden6" class="form-control" max="6" min="1" required></td>
