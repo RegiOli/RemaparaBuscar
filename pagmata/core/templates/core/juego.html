@@ -6,11 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego</title>
+    <title>Turismo</title>
     <link rel="icon" href="{% static 'core/img/rema.ico' %}">
-    
+  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}">
+
 </head>
 
 <body>
@@ -22,86 +23,182 @@
     </header>
 
     <section class="button-container mt-5">
-        <h3 class="text-center">Etapas de la Búsqueda</h3>
-        <div class="row">
+        <h3 class="text-center">Etapas de la Búsqueda</h2>
+            <div class="row">
 
-            <div class="col-12 col-md-4 mb-4">
-                <a href="{% url 'formulario' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
-                    <img src="{% static 'core/img/formpng.png' %}" alt="Logo de juego" width="50" class="mr-2">
-                    Formulario
-                </a>
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="{% url 'formulario' %}"
+                        class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+                        <img src="{% static 'core/img/formpng.png' %}" alt="Logo de Formulario" width="50" class="mr-2">
+                        Formulario
+                    </a>
+                </div>
+
+
+
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="{% url 'juego' %}"
+                        class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+                        <img src="{% static 'core/img/game.png' %}" alt="Logo de juego" width="50" class="mr-2">
+                        Juego
+                    </a>
+                </div>
+
+
+
+
+                <div class="col-12 col-md-4 mb-4">
+                    <a href="{% url 'destinofinal' %}"
+                        class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+                        <img src="{% static 'core/img/cuestionari.png' %}" alt="Logo de Cuestionario" width="50"
+                            class="mr-2">
+                        Destino Final
+                    </a>
+                </div>
+
+                <div class="col-12 col-md mb-4">
+                    <a href="{% url 'index' %}"
+                        class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
+                        <img src="{% static 'core/img/inicio.png' %}" alt="Logo de juego" width="50" class="mr-2">
+                        Inicio
+                    </a>
+                </div>
+
+
+
+
+
             </div>
-
-
-
-            <div class="col-12 col-md-4 mb-4">
-                <a href="{% url 'turismo' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
-                    <img src="{% static 'core/img/ubication.png' %}" alt="Logo de Turismo" width="50" class="mr-2">
-                    Turismo
-                </a>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <a href="{% url 'destinofinal' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
-                    <img src="{% static 'core/img/cuestionari.png' %}" alt="Logo de Cuestionario" width="50" class="mr-2">
-                    Destino Final
-                </a>
-            </div>
-
-            <div class="col-12 col-md mb-4">
-                <a href="{% url 'index' %}" class="btn btn-outline-primary btn-block d-flex align-items-center justify-content-center">
-                    <img src="{% static 'core/img/inicio.png' %}"alt="Logo de juego" width="50" class="mr-2">
-                    Inicio
-                </a>
-            </div>
-
-
-
-
-
-        </div>
 
 
 
 
     </section>
 
-   
-
-    <h2>Juego</h2>
 
 
+
+
+    <h2>Turismo</h2>
 
     <main class="container">
         <div class="text-center custom-bg-gray p-4 rounded">
-            <p class="text-center"> A continuación verá un video con aproximadamente 70 fotos. Tiene que registar la cantidad de fotos en las que Ud. no aparece 🧐</p>
-            <p class="text-center">
-            Reste 2 a ese valor y luego multiplíquelo por 10, ahora tiene el final del número que falta en <strong>Destino Final</strong></p>
+            <p class="text-justify"> En esta parte del juego encontrará rutas que lo guiarán a diferentes sitios
+                turísticos de la Ciudad de Buenos Aires, la cual fue separada en <i>Núcleos</i>. Cada uno de ellos está conformado por diferentes paradas, de las cuales una tiene una pista.</p> 
                 
-                           </p>
+            <p class="text-justify"> Como su cara de <i>"Qué pajaaa!!🦥, no se entiende una mierda!! 💩"</i> se está viendo, me complace avisarle que cada <i>Núcleo</i> tiene asociada una <strong>Pista</strong>.</p> 
+                       
+            
+            <p class="text-justify">Las paradas con pistas deberá anotarlas en <strong><i>Formulario</i></strong> y las pistas que reciba en formato papel ✉️ o vía msj vitual 📱 en <strong><i>Juego</i></strong>.</p>
 
-            <a href="https://youtu.be/3uV0-W4NWuM" target="_blank" title="Sorpresa 5 =)"> Quinta, última canción</a>
+                   
+            <p class="text-justify">De esta forma, completando las diferentes etapas de la búsqueda, podrá dirigirse al Destino final.
+            </p>
+
+
+
+            <a href="https://youtu.be/OHGt3VRYVzA" target="_blank" title="Sorpresa 3 =)"> Tercero, otra canción</a>
 
         </div>
 
     </main>
 
+    <br>
+
+    <h4>Ruta con los principales núcleos</h4>
 
 
-<br>
+    <div class="card-container">
 
-<div class="video-container" style="display: flex; justify-content: center;">
-    
-     <a href="https://drive.google.com/file/d/1WoDNtfGTK99lvV12-l7R7m-gXnzwyxMX/preview" target="_blank"> Click aquí, "estoy segura de que perderás"</a>
-     
-</div>
+        <div class="card">
+            <div class="card-content">
+                <a href="https://maps.app.goo.gl/7h3zE7KqofAhVUQd7" target="_blank" class="nucleo">Núcleo 1</a>
+            </div>
+
+            <div class="card-content">
+                <a href="{% url 'pista1' %}" class="pista">Pista 1</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <a href="https://maps.app.goo.gl/Pgw4MhTGjceLBMtv7" target="_blank" class="nucleo">Núcleo 2</a>
+            </div>
+            <div class="divider"></div>
+            <div class="card-content">
+                <a href="{% url 'pista2' %}" class="pista">Pista 2</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <a href="https://maps.app.goo.gl/DvXHFgz4kMsjGc1P9" target="_blank" class="nucleo">Núcleo 3</a>
+            </div>
+            <div class="card-content">
+                <div class="divider"></div>
+                <a href="{% url 'pista3' %}" class="pista">Pista 3</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <a href="{% url 'descanso' %}" class="descanso">Descanso</a>
+            </div>
+            <div class="card-content">
+                <div class="divider"></div>
+                <a href="{% url 'pista4' %}" class="pista">Pista 4</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <a href="https://maps.app.goo.gl/tfCo5QTZKa4By75z9" target="_blank" class="nucleo">Núcleo 5</a>
+            </div>
+            <div class="card-content">
+                <div class="divider"></div>
+                <a href="{% url 'pista5' %}" class="pista">Pista 5</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <a href="https://maps.app.goo.gl/EwHLvh48WKDmdHPu7" target="_blank" class="nucleo">Núcleo 6</a>
+            </div>
+            <div class="card-content">
+                <div class="divider"></div>
+                <a href="{% url 'pista6' %}" class="pista">Pista 6</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <a href="https://maps.app.goo.gl/j4CbnqRZFuTJPUGW6" target="_blank" class="nucleo">Núcleo 7</a>
+            </div>
+            <div class="card-content" class="destino-final">
+                <a href="{% url 'destinofinal' %}" class="destino">Destino Final</a>
+            </div>
+
+        </div>
 
 
-<br>
 
 
-<footer>
-    <div class="fraseformulario">El primer paso puede que no te lleve donde quiaeres ir, pero te saca de donde estás </div>
-</footer>
+
+
+
+
+
+
+        <footer>
+            <div class="fraseformulario">Admira a quien lo intente aunque fracase (Séneca)</div>
+        </footer>
+
+
+
+</body>
+
+
+
+</html>
 
 
 
