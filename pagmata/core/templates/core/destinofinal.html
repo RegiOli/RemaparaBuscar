@@ -8,9 +8,11 @@
   <title>Destino Final</title>
   
   <link rel="icon" href="{% static 'core/img/rema.ico' %}">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-     <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}"> 
+   
  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'core/css/jvacss.css' %}">
+
 </head>
 
 <body>
@@ -81,6 +83,8 @@
 
     <form method="post" action="{% url 'destinofinal' %}">
         {% csrf_token %}
+        
+        
     <main class="container">
       <div class="text-center custom-bg-gray p-4 rounded">
         <label for="teatro">El destino final está muy cerca del Teatro </label>
@@ -88,7 +92,7 @@
         <label for="avenida"> a 20 minutos caminando desde donde ahora se encuentra y queda en la Av. </label>
         <input type="text" name="avenida" id="avenida" required class="Completar">
         <label for="numero">al </label>
-        <input type="number" name="numero" id="numero" max="1070" required class="Completar">.
+        <input type="number" name="numero" id="numero" max="2000" required class="Completar">.
         <br>
         <br>
         <input type="submit" value="Enviar" class="btn btn-success mr-2">
